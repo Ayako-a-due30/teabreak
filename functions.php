@@ -2,8 +2,10 @@
 
 function mytheme_setup(){
     add_theme_support('wp-block-styles');
+}
     add_action('after_setup_theme','mytheme_setup');
-    
+
+function mytheme_enqueue() {
     wp_enqueue_style(
         'mytheme-style',
         get_stylesheet_uri(),
@@ -12,3 +14,4 @@ function mytheme_setup(){
     );
 }
 add_action('wp_enqueue_scripts','mytheme_enqueue');
+
