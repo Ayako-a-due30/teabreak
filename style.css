@@ -56,6 +56,9 @@ body *::after {
     --f6:0.8em;
 
     --basecolor:#63a211;
+    --gradient: linear-gradient( 109.6deg,  rgba(34,126,34,1) 11.2%, rgba(99,162,17,1) 91.1% );
+
+    --myfont:'Josefin Sans', sans-serif;
 }
 /* フォント */
 body {
@@ -89,4 +92,144 @@ h6 {
 h2 {
     border-left: solid 14px var(--basecolor);
     padding-left: 14px;
+}
+
+.wp-block {
+    max-width: calc(720px + 30px);
+}
+
+body {
+    margin: 0;
+}
+
+.mycontainer {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width:740px) {
+    .mycontainer {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* 記事に関する情報 */
+.myposthead {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* リンク */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* 記事が属するカテゴリー */
+
+.post-categories {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.post-categories li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.post-categories a {
+    padding: 3px 10px;
+    border: solid 1px currentColor;
+    border-radius: 10px;
+    color: var(--basecolor);
+    font-size: var(--f6);
+}
+
+/* スクリーンリーダー用のテキスト */
+.screen-reader-text {
+    border: 0;
+    word-wrap: normal !important;
+}
+
+/* 前後の記事へのリンク */
+.nav-links {
+    display: flex;
+    margin: 30px 0;
+    font-size: var(--f6);
+}
+
+.post-categories::before {
+    content: "\f318";
+    font-family: "dashicons";
+    color: var(--basecolor);
+    font-size: var(--f2);
+    line-height: 1;
+    margin-right: 5px;
+}
+.nav-previous {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-next {
+    flex: 1;
+    margin-left: 10px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-previous::before {
+    content: "\f141";
+}
+
+.nav-next::after {
+    content: "\f139";
+}
+
+.nav-previous::before,.nav-next::after {
+    font-family: "dashicons";
+    color: var(--basecolor);
+    font-size: var(--f2);
+    line-height: 1;
+    margin-right: 5px;
+}
+
+/* ヘッダー */
+
+.myhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: #444;
+}
+
+.myhead a {
+    font-size: var(--f3);
+    font-family: var(--myfont);
+}
+
+.myhead p {
+    font-size: var(--f6);
+}
+
+/* フッター */
+.myfoot {
+    padding: 16px;
+    background-color: var(--basecolor);
+    background-image: var(--gradient);
+    color: #fff;
+    text-align: center;
+    font-family: var(--myfont);
 }
